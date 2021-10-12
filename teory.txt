@@ -1,0 +1,1 @@
+let calculo=Math.sqrt(Math.pow(coup.posX-ninja.posX,2) + Math.pow(coup.posY-ninja.posY,2))
