@@ -9,7 +9,9 @@ export const ctx=canvas.getContext('2d')
 
 canvas.width=800 
 canvas.height=608 
-canvas.style.border='3px solid black'
+canvas.style.border='3px solid black' 
+
+let enJuegoMusic=true;
 
 let background1=new Image()
 background1.src='./img/fondoEstrellado.png'
@@ -18,6 +20,19 @@ let collision1=new Image()
 collision1.src='./img/Yellow.png'
 
 export let level;
+
+//EVENTOS DE LA MÚSICA PRINCIPAL
+
+function principalMusicStop(){ 
+
+
+   if(enJuegoMusic){
+       ninja.music.play()
+   }
+
+}
+principalMusicStop()
+ 
 
 function levels(){
    if(score.points===0 ){
@@ -101,6 +116,13 @@ level=[
 //principal loop//bucle principal
 function loop(){
 requestAnimationFrame(loop)
+   
+ if(life.lifes<1){
+   enJuegoMusic=false 
+   if(enJuegoMusic==false){
+      ninja.music.stop()
+   }
+}
 
 levels()
 
