@@ -15,8 +15,8 @@ class Hero{
      this.route=route; 
      this.imageInstance=new Image()
      this.imageInstance.src=this.route
-     this.music=new Howl({src:['sounds/musica.ogg'],loop:true})
-    //  this.music.play()
+     this.music=new Howl({src:['sounds/musica.ogg'],loop:true,volume:0.5})
+   
     }
     
     draw(){
